@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+  web:
+    container_name: "web"
+    image: "nginx:1.19"
+    volumes:
+    - "./html:/usr/share/nginx/html"
+    networks:
+    - "frontend"
+
+  server:
+    container_name: "server"
+    build: ./server
+    networks:
+    - "frontend"
+
+  client:
+    container_name: "browser"
+    image: jlesage/firefox
+    shm_size: 2gb
+    ports:
+    - "5800:5800"
+    networks:
+    - "frontend"
+
+networks:
+  frontend:
+    driver: bridge
