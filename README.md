@@ -16,6 +16,6 @@ They share the same network and the browser app is exposed via the 5800 port.
 # How it works
 
 Basically we go to the form page and we inject a payload in order to create a reverse shell.
-So the server container sends its stdout/stderr to my given local host (via e.g netcat) while we send it each command to execute.
+So the server container sends its stdout/stderr to my given local host (via e.g netcat) while we're sending it each command to execute.
 
 In a nutshell, this example is deliberately simple and awkward but it allows me to remember the principle.
